@@ -26,12 +26,14 @@
   },
   "homepage": "https://github.com/vporton/erc20erc777#readme",
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
     "hardhat": "^2.15.0"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.9.1",
-    "hardhat-deploy": "^0.11.30"
+    "deploy-eip-1820": "^1.0.0",
+    "ethers": "^5.7.2",
+    "hardhat-deploy": "^0.11.30",
+    "hardhat-deploy-ethers": "^0.3.0-beta.13"
   },
   "directories": {
     "test": "test"

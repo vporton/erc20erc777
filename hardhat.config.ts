@@ -1,6 +1,7 @@
 import { HardhatUserConfig } from "hardhat/config";
-require("@nomicfoundation/hardhat-toolbox");
+// require("@nomicfoundation/hardhat-toolbox");
 require('hardhat-deploy');
+require('hardhat-deploy-ethers');
 import { INFURA_ID } from './config';
 
 const config: any /*HardhatUserConfig | { namedAccounts: any }*/ = {
