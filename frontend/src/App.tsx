@@ -39,7 +39,7 @@ const ethereumClient = new EthereumClient(wagmiClient, chains);
 function AppMainPart() {
   return (
     <div className="App" style={{textAlign: 'center'}}>
-      <Web3Button />
+      Your wallet: <span style={{display: 'inline-block'}}><Web3Button /></span>
     </div>
   );
 }
