@@ -10,9 +10,11 @@
     "@types/node": "^16.18.35",
     "@types/react": "^18.2.10",
     "@types/react-dom": "^18.2.4",
+    "@wagmi/core": "^1.0.0",
+    "dotenv": "^16.1.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^4.0.3",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
