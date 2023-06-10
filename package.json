@@ -31,5 +31,8 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.9.1"
+  },
+  "directories": {
+    "test": "test"
   }
 }
