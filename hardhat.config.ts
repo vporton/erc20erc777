@@ -2,13 +2,14 @@ import { HardhatUserConfig } from "hardhat/config";
 // require("@nomicfoundation/hardhat-toolbox");
 require('hardhat-deploy');
 require('hardhat-deploy-ethers');
-import { INFURA_ID } from './config';
+import { INFURA_ID } from './frontend/src/data/config';
 
 const config: any /*HardhatUserConfig | { namedAccounts: any }*/ = {
   solidity: "0.8.20",
   defaultNetwork: "hardhat",
   networks: {
     hardhat: {
+      chainId: 1337,
       accounts: [
         {
           privateKey: '0x0e206566a53a138f9500dd3ffaf12bbf3c773a34a0e78e6710b0726b82951e6d', // 0xfd95BF6727416050008dB2551c94C86D21bA3b77

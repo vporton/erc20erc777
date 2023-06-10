@@ -67,6 +67,6 @@ module.exports = async ({getNamedAccounts, deployments}) => {
         { wrapped: USDT, wrapper: gUSDT.address },
         { wrapped: USDC, wrapper: gUSDC.address },
     ];
-    fs.writeFileSync("artifacts/addresses.json", JSON.stringify(j));
+    fs.writeFileSync("frontend/src/data/addresses.json", JSON.stringify(j));
 };
 module.exports.tags = ['LockERC20InERC777'];

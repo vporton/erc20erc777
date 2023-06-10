@@ -17,11 +17,13 @@ import {
   useSigner,
   WagmiConfig,
 } from "wagmi";
-import { gnosis, mainnet } from "@wagmi/core/chains";
+import { gnosis, mainnet, localhost } from "@wagmi/core/chains";
 import { useEffect, useState } from "react";
-import { INFURA_ID } from '../../config';
+import { INFURA_ID } from './data/config';
+import tokens from './data/addresses.json';
+import ShowToken from './components/ShowToken';
 
-const chains = [mainnet];
+const chains = [localhost, mainnet];
 
 // Wagmi client
 const { provider } = configureChains(chains, [
@@ -40,6 +42,7 @@ function AppMainPart() {
   return (
     <div className="App" style={{textAlign: 'center'}}>
       Your wallet: <span style={{display: 'inline-block'}}><Web3Button /></span>
+      {tokens.map(t => <ShowToken key={t.wrapper} wrapped={t.wrapped as `0x${string}`} wrapper={t.wrapper as `0x${string}`}/>)}
     </div>
   );
 }
