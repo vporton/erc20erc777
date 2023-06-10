@@ -30,7 +30,8 @@
     "hardhat": "^2.15.0"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^4.9.1"
+    "@openzeppelin/contracts": "^4.9.1",
+    "hardhat-deploy": "^0.11.30"
   },
   "directories": {
     "test": "test"

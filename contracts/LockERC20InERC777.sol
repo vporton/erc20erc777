@@ -5,6 +5,7 @@ pragma solidity ^0.8.20;
 // import "hardhat/console.sol";
 import { ERC777 } from './ERC777.sol';
 import { IERC20 } from '@openzeppelin/contracts/token/ERC20/IERC20.sol';
+import { IERC1820Registry } from "@openzeppelin/contracts/utils/introspection/IERC1820Registry.sol";
 
 contract LockERC20InERC777 is ERC777 {
     IERC20 private erc20;
@@ -12,6 +13,7 @@ contract LockERC20InERC777 is ERC777 {
     uint private divisor;
 
     constructor(
+        IERC1820Registry _ERC1820_REGISTRY_,
         IERC20 _erc20,
         uint _multiplier,
         uint _divisor,
@@ -19,9 +21,11 @@ contract LockERC20InERC777 is ERC777 {
         string memory symbol_
         /*, address[] memory defaultOperators_*/
     )
-        ERC777(name_, symbol_, new address[](0))
+        ERC777(_ERC1820_REGISTRY_, name_, symbol_, new address[](0))
     {
         erc20 = _erc20;
+        multiplier = _multiplier;
+        divisor = _divisor;
     }
 
     function borrowERC20(uint256 _amount, address _from, address _to, bytes memory userData) public {

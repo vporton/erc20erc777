@@ -19,7 +19,7 @@ import {
 } from "wagmi";
 import { gnosis, mainnet } from "@wagmi/core/chains";
 import { useEffect, useState } from "react";
-import { INFURA_ID } from './config';
+import { INFURA_ID } from '../../config';
 
 const chains = [mainnet];
 

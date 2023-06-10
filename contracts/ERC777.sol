@@ -31,7 +31,7 @@ import "@openzeppelin/contracts/utils/introspection/IERC1820Registry.sol";
 contract ERC777 is Context, IERC777, IERC20 {
     using Address for address;
 
-    IERC1820Registry internal constant _ERC1820_REGISTRY = IERC1820Registry(0x1820a4B7618BdE71Dce8cdc73aAB6C95905faD24);
+    IERC1820Registry internal _ERC1820_REGISTRY;
 
     mapping(address => uint256) private _balances;
 
@@ -59,7 +59,8 @@ contract ERC777 is Context, IERC777, IERC20 {
     /**
      * @dev `defaultOperators` may be an empty array.
      */
-    constructor(string memory name_, string memory symbol_, address[] memory defaultOperators_) {
+    constructor(IERC1820Registry _ERC1820_REGISTRY_, string memory name_, string memory symbol_, address[] memory defaultOperators_) {
+        _ERC1820_REGISTRY = _ERC1820_REGISTRY_;
         _name = name_;
         _symbol = symbol_;
 
