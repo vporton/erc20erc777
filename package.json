@@ -30,8 +30,7 @@
     "hardhat": "^2.15.0"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^4.9.1",
-    "react-scripts": "^5.0.1"
+    "@openzeppelin/contracts": "^4.9.1"
   },
   "directories": {
     "test": "test"
