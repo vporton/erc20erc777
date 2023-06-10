@@ -1,3 +1,4 @@
+import fs from 'fs';
 const hre = require("hardhat");
 const { deploy1820 } = require('deploy-eip-1820')
 
@@ -33,7 +34,7 @@ module.exports = async ({getNamedAccounts, deployments}) => {
         USDC = result.address;
     }
 
-    await deploy("gUSDT", {
+    const gUSDT = await deploy("gUSDT", {
         contract: 'LockERC20InERC777',
         from: deployer,
         args: [
@@ -47,7 +48,7 @@ module.exports = async ({getNamedAccounts, deployments}) => {
         log: true,
         gasLimit: 10000000,
     });
-    await deploy("gUSDC", {
+    const gUSDC = await deploy("gUSDC", {
         contract: 'LockERC20InERC777',
         from: deployer,
         args: [
@@ -61,5 +62,11 @@ module.exports = async ({getNamedAccounts, deployments}) => {
         log: true,
         gasLimit: 10000000,
     });
+
+    const j = [
+        { wrapped: USDT, wrapper: gUSDT.address },
+        { wrapped: USDC, wrapper: gUSDC.address },
+    ];
+    fs.writeFileSync("artifacts/addresses.json", JSON.stringify(j));
 };
 module.exports.tags = ['LockERC20InERC777'];
