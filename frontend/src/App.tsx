@@ -19,15 +19,13 @@ import {
 } from "wagmi";
 import { gnosis, mainnet } from "@wagmi/core/chains";
 import { useEffect, useState } from "react";
-import * as dotenv from 'dotenv';
-
-dotenv.config();
+import { INFURA_ID } from './config';
 
 const chains = [mainnet];
 
 // Wagmi client
 const { provider } = configureChains(chains, [
-  walletConnectProvider({ infuraId: process.env.INFURA_ID }),
+  walletConnectProvider({ projectId: INFURA_ID }),
 ]);
 const wagmiClient = createClient({
   autoConnect: true,
