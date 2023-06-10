@@ -1,0 +1,35 @@
+{
+  "name": "erc20erc777",
+  "version": "0.0.1",
+  "description": "Wrap ERC-20 in ERC-777",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vporton/erc20erc777.git"
+  },
+  "keywords": [
+    "ERC-20",
+    "ERC-777",
+    "wrap",
+    "wrap",
+    "token",
+    "wrap",
+    "tokens"
+  ],
+  "author": "Victor Porton",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/vporton/erc20erc777/issues"
+  },
+  "homepage": "https://github.com/vporton/erc20erc777#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "hardhat": "^2.15.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.1"
+  }
+}
