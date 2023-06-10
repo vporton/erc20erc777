@@ -36,11 +36,28 @@ const wagmiClient = createClient({
 // Web3Modal Ethereum Client
 const ethereumClient = new EthereumClient(wagmiClient, chains);
 
+function AppMainPart() {
+  return (
+    <div className="App" style={{textAlign: 'center'}}>
+      <Web3Button />
+    </div>
+  );
+}
+
 function App() {
+  useEffect(() => {
+    document.title = "Donations - World Science DAO";
+  }, []);
   return (
     <div className="App">
       <h1>ERC-777 USD Tokens</h1>
-      <Web3Button />
+      <WagmiConfig client={wagmiClient}>
+        <AppMainPart />
+      </WagmiConfig>
+      <Web3Modal
+        projectId={INFURA_ID}
+        ethereumClient={ethereumClient}
+      />
     </div>
   );
 }
